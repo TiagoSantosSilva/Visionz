@@ -64,7 +64,6 @@
 		270C19D02004D23D0085E872 /* Visionz */ = {
 			isa = PBXGroup;
 			children = (
-				27E270B02006657500175DA4 /* SqueezeNet.mlmodel */,
 				270C19E52004D2970085E872 /* Controllers */,
 				270C19E42004D2900085E872 /* Views */,
 				270C19E32004D2850085E872 /* Resources */,
@@ -80,6 +79,7 @@
 		270C19E32004D2850085E872 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				27E270B02006657500175DA4 /* SqueezeNet.mlmodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
