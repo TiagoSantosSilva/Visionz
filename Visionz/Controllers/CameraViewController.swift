@@ -26,13 +26,14 @@ class CameraViewController: UIViewController {
     var flashControlState: FlashState = .off
     
     var speechSinthesizer = AVSpeechSynthesizer()
-
+    
     @IBOutlet weak var captureImageView: RoundedShadowImageView!
     @IBOutlet weak var flashButton: RoundedShadowButton!
     @IBOutlet weak var identificationLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var roundedLabelView: RoundedShadowView!
+    @IBOutlet weak var imageViewSpinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ class CameraViewController: UIViewController {
         super.viewDidAppear(animated)
         previewLayer.frame = cameraView.bounds
         speechSinthesizer.delegate = self
+        imageViewSpinner.isHidden = false
     }
     
     fileprivate func addTapCameraViewGestureRecognizer() {
@@ -86,6 +88,10 @@ class CameraViewController: UIViewController {
     }
     
     @objc func didTapCameraView() {
+        self.cameraView.isUserInteractionEnabled = false
+        imageViewSpinner.isHidden = false
+        imageViewSpinner.startAnimating()
+        
         let settings = AVCapturePhotoSettings()
         
         settings.previewPhotoFormat = settings.embeddedThumbnailPhotoFormat
@@ -164,8 +170,10 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
 }
 
 extension CameraViewController: AVSpeechSynthesizerDelegate {
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
-        
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        self.cameraView.isUserInteractionEnabled = true
+        imageViewSpinner.isHidden = true
+        imageViewSpinner.stopAnimating()
     }
 }
 
