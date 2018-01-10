@@ -14,6 +14,7 @@ class CameraViewController: UIViewController {
     var captureSession: AVCaptureSession!
     var cameraOutput: AVCapturePhotoOutput!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var photoData: Data?
 
     @IBOutlet weak var captureImageView: RoundedShadowImageView!
     @IBOutlet weak var flashButton: RoundedShadowButton!
@@ -32,8 +33,20 @@ class CameraViewController: UIViewController {
         previewLayer.frame = cameraView.bounds
     }
     
+    fileprivate func addTapCameraViewGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapCameraView))
+        tap.numberOfTapsRequired = 1
+        cameraView.addGestureRecognizer(tap)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        addTapCameraViewGestureRecognizer()
+        setCamera()
+    }
+    
+    fileprivate func setCamera() {
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = AVCaptureSession.Preset.hd1920x1080
         
@@ -58,6 +71,26 @@ class CameraViewController: UIViewController {
             }
         } catch {
             debugPrint(error)
+        }
+    }
+    
+    @objc func didTapCameraView() {
+        let settings = AVCapturePhotoSettings()
+        
+        settings.previewPhotoFormat = settings.embeddedThumbnailPhotoFormat
+        
+        cameraOutput.capturePhoto(with: settings, delegate: self)
+    }
+}
+
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let error = error {
+            debugPrint(error)
+        } else {
+            photoData = photo.fileDataRepresentation()
+            let image = UIImage(data: photoData!)
+            self.captureImageView.image = image
         }
     }
 }
