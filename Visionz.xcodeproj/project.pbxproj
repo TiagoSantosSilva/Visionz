@@ -16,6 +16,7 @@
 		27A2E32B2006440A00B3A0FA /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32A2006440A00B3A0FA /* RoundedShadowButton.swift */; };
 		27A2E32D2006444500B3A0FA /* RoundedShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32C2006444500B3A0FA /* RoundedShadowImageView.swift */; };
 		27A2E32F2006453D00B3A0FA /* ShadowRounder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32E2006453D00B3A0FA /* ShadowRounder.swift */; };
+		27E270B12006657500175DA4 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 27E270B02006657500175DA4 /* SqueezeNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		27A2E32A2006440A00B3A0FA /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		27A2E32C2006444500B3A0FA /* RoundedShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowImageView.swift; sourceTree = "<group>"; };
 		27A2E32E2006453D00B3A0FA /* ShadowRounder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRounder.swift; sourceTree = "<group>"; };
+		27E270B02006657500175DA4 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		270C19D02004D23D0085E872 /* Visionz */ = {
 			isa = PBXGroup;
 			children = (
+				27E270B02006657500175DA4 /* SqueezeNet.mlmodel */,
 				270C19E52004D2970085E872 /* Controllers */,
 				270C19E42004D2900085E872 /* Views */,
 				270C19E32004D2850085E872 /* Resources */,
@@ -175,6 +178,7 @@
 				270C19D42004D23D0085E872 /* CameraViewController.swift in Sources */,
 				270C19D22004D23D0085E872 /* AppDelegate.swift in Sources */,
 				27A2E329200642DA00B3A0FA /* RoundedShadowView.swift in Sources */,
+				27E270B12006657500175DA4 /* SqueezeNet.mlmodel in Sources */,
 				27A2E32B2006440A00B3A0FA /* RoundedShadowButton.swift in Sources */,
 				27A2E32D2006444500B3A0FA /* RoundedShadowImageView.swift in Sources */,
 				27A2E32F2006453D00B3A0FA /* ShadowRounder.swift in Sources */,
