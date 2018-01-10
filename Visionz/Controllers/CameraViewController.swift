@@ -24,6 +24,8 @@ class CameraViewController: UIViewController {
     var photoData: Data?
     
     var flashControlState: FlashState = .off
+    
+    var speechSinthesizer = AVSpeechSynthesizer()
 
     @IBOutlet weak var captureImageView: RoundedShadowImageView!
     @IBOutlet weak var flashButton: RoundedShadowButton!
@@ -39,6 +41,7 @@ class CameraViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         previewLayer.frame = cameraView.bounds
+        speechSinthesizer.delegate = self
     }
     
     fileprivate func addTapCameraViewGestureRecognizer() {
@@ -103,15 +106,26 @@ class CameraViewController: UIViewController {
             print(classification.identifier)
             print(classification.confidence)
             if classification.confidence < 0.5 {
-                self.identificationLabel.text = "I'm not sure what this is, please try again."
+                let unknownObjectMessage = "I'm not sure what this is. Please try again."
+                self.identificationLabel.text = unknownObjectMessage
+                synthesizeSpeach(fromString: unknownObjectMessage)
                 self.confidenceLabel.text = ""
                 break
             } else {
-                self.identificationLabel.text = classification.identifier
-                self.confidenceLabel.text = "CONFIDENCE: \(classification.confidence * 100)%"
+                let identification = classification.identifier
+                let confidence = Int(classification.confidence * 100)
+                
+                self.identificationLabel.text = identification
+                self.confidenceLabel.text = "CONFIDENCE: \(confidence)%"
+                synthesizeSpeach(fromString: "This looks like a \(identification) and I'm \(confidence) percente sure.")
                 break
             }
         }
+    }
+    
+    func synthesizeSpeach(fromString string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSinthesizer.speak(speechUtterance)
     }
     
     
@@ -146,6 +160,12 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
             let image = UIImage(data: photoData!)
             self.captureImageView.image = image
         }
+    }
+}
+
+extension CameraViewController: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
+        
     }
 }
 
