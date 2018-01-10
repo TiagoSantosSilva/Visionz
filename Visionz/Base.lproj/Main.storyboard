@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJI-WM-DTi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-yF-xdl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-yF-xdl" customClass="RoundedShadowView" customModule="Visionz" customModuleProvider="target">
                                         <rect key="frame" x="20" y="30" width="335" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KuN-o5-09z">
@@ -56,18 +56,18 @@
                                             <constraint firstItem="KuN-o5-09z" firstAttribute="leading" secondItem="aAc-yF-xdl" secondAttribute="leading" constant="8" id="lMX-cF-Mjd"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-QQ-57V">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-QQ-57V" customClass="RoundedShadowButton" customModule="Visionz" customModuleProvider="target">
                                         <rect key="frame" x="20" y="615" width="85" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="0yg-Mh-Ja4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="0yg-Mh-Ja4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
                                         <state key="normal" title="FLASH OFF">
                                             <color key="titleColor" red="0.84705882352941175" green="0.27843137254901962" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cd0-kC-uBy">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cd0-kC-uBy" customClass="RoundedShadowImageView" customModule="Visionz" customModuleProvider="target">
                                         <rect key="frame" x="280" y="517" width="75" height="130"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="AZw-ZP-5Pd"/>
@@ -102,6 +102,7 @@
                         <outlet property="confidenceLabel" destination="VJp-8K-bs6" id="xbV-EB-BsB"/>
                         <outlet property="flashButton" destination="uNV-QQ-57V" id="4OA-49-gYL"/>
                         <outlet property="identificationLabel" destination="Ssd-Fu-2k8" id="VOv-Rr-Oxh"/>
+                        <outlet property="roundedLabelView" destination="aAc-yF-xdl" id="Kl9-0L-5ie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

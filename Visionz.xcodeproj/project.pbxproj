@@ -12,6 +12,10 @@
 		270C19D72004D23D0085E872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C19D52004D23D0085E872 /* Main.storyboard */; };
 		270C19D92004D23D0085E872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C19D82004D23D0085E872 /* Assets.xcassets */; };
 		270C19DC2004D23D0085E872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C19DA2004D23D0085E872 /* LaunchScreen.storyboard */; };
+		27A2E329200642DA00B3A0FA /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E328200642DA00B3A0FA /* RoundedShadowView.swift */; };
+		27A2E32B2006440A00B3A0FA /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32A2006440A00B3A0FA /* RoundedShadowButton.swift */; };
+		27A2E32D2006444500B3A0FA /* RoundedShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32C2006444500B3A0FA /* RoundedShadowImageView.swift */; };
+		27A2E32F2006453D00B3A0FA /* ShadowRounder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2E32E2006453D00B3A0FA /* ShadowRounder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		270C19D82004D23D0085E872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270C19DB2004D23D0085E872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270C19DD2004D23D0085E872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A2E328200642DA00B3A0FA /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		27A2E32A2006440A00B3A0FA /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		27A2E32C2006444500B3A0FA /* RoundedShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowImageView.swift; sourceTree = "<group>"; };
+		27A2E32E2006453D00B3A0FA /* ShadowRounder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRounder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,10 @@
 		270C19E42004D2900085E872 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27A2E328200642DA00B3A0FA /* RoundedShadowView.swift */,
+				27A2E32A2006440A00B3A0FA /* RoundedShadowButton.swift */,
+				27A2E32C2006444500B3A0FA /* RoundedShadowImageView.swift */,
+				27A2E32E2006453D00B3A0FA /* ShadowRounder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +174,10 @@
 			files = (
 				270C19D42004D23D0085E872 /* CameraViewController.swift in Sources */,
 				270C19D22004D23D0085E872 /* AppDelegate.swift in Sources */,
+				27A2E329200642DA00B3A0FA /* RoundedShadowView.swift in Sources */,
+				27A2E32B2006440A00B3A0FA /* RoundedShadowButton.swift in Sources */,
+				27A2E32D2006444500B3A0FA /* RoundedShadowImageView.swift in Sources */,
+				27A2E32F2006453D00B3A0FA /* ShadowRounder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
